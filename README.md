@@ -1,4 +1,4 @@
-# Markety SiMonzo
+# Markety
 
 ## React-Dashboard
 

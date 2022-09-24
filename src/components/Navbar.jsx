@@ -36,6 +36,11 @@ const Navbar = () => {
     setClicked,
     setScreenSize,
     screenSize,
+    setNotifications,
+    setChat,
+    setCart,
+    profile,
+    setProfile,
   } = useStateContext();
 
   useEffect(() => {
@@ -68,43 +73,59 @@ const Navbar = () => {
       <div className="flex">
         <NavButton
           title="Cart"
-          customFunc={() => handleClick("cart")}
+          customFunc={() => {
+            handleClick("cart");
+            setCart(true);
+          }}
           color={currentColor}
           icon={<FiShoppingCart />}
         />
         <NavButton
           title="Chat"
-          customFunc={() => handleClick("chat")}
-          dotColor="#03c9d7"
+          customFunc={() => {
+            handleClick("chat");
+            setChat(true);
+          }}
+          dotColor="#e11d48"
           color={currentColor}
           icon={<BsChatLeft />}
         />
         <NavButton
           title="Notifications"
-          customFunc={() => handleClick("notification")}
-          dotColor="#03c9d7"
+          customFunc={() => {
+            handleClick("notification");
+            setNotifications(true);
+          }}
+          dotColor="#e11d48"
           color={currentColor}
           icon={<RiNotification3Line />}
         />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-            onClick={() => handleClick("userProfile")}
+            onClick={() => {
+              handleClick("userProfile");
+              setProfile(true);
+            }}
           >
-            <img className="rounded-full w-8 h-8" src={dave} />
+            <img
+              className="rounded-full w-8 h-8"
+              src={dave}
+              alt="user-profile"
+            />
             <p>
-              <span className="text-gray-400 text-14 ">Hi, </span>
-              <span className="text-gray-400 font-bold ml-1 text-14 ">
+              <span className="text-gray-400 text-14">Hi,</span>{" "}
+              <span className="text-gray-400 font-bold ml-1 text-14">
                 Ahmed
               </span>
             </p>
-            <MdKeyboardArrowDown className="text-gray-400 text-14 " />
+            <MdKeyboardArrowDown className="text-gray-400 text-14" />
           </div>
         </TooltipComponent>
         {isClicked.cart && <Cart />}
         {isClicked.chat && <Chat />}
         {isClicked.notification && <Notification />}
-        {isClicked.userprofile && <userProfile />}
+        {isClicked.userProfile && <UserProfile />}
       </div>
     </div>
   );

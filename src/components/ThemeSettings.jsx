@@ -53,7 +53,7 @@ const ThemeSettings = () => {
               onChange={setMode}
               checked={currentMode === "Dark"}
             />
-            <label className="ml-2 text-md cursor-pointer " hrmlFor="dark">
+            <label className="ml-2 text-md cursor-pointer " htmlFor="dark">
               Dark
             </label>
           </div>

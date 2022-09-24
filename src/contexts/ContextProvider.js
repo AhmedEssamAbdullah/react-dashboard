@@ -13,10 +13,13 @@ export const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(true);
   const [isClicked, setIsClicked] = useState(initialState);
   const [screenSize, setScreenSize] = useState(undefined);
-  const [currentColor, setCurrentColor] = useState("#03C9D7");
+  const [currentColor, setCurrentColor] = useState("#1e3a8a");
   const [currentMode, setCurrentMode] = useState("Light");
   const [themeSettings, setThemeSettings] = useState(false);
-
+  const [notifications, setNotifications] = useState(true);
+  const [chat, setChat] = useState(true);
+  const [cart, setCart] = useState(true);
+  const [profile, setProfile] = useState(true);
   const setMode = (e) => {
     setCurrentMode(e.target.value);
 
@@ -53,6 +56,14 @@ export const ContextProvider = ({ children }) => {
         setThemeSettings,
         setMode,
         setColor,
+        notifications,
+        setNotifications,
+        chat,
+        setChat,
+        cart,
+        setCart,
+        profile,
+        setProfile,
       }}
     >
       {children}

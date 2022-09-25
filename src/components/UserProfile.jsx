@@ -88,7 +88,7 @@ const UserProfile = () => {
               bgColor={currentColor}
               text="Logout"
               borderRadius="10px"
-              width="full"
+              btnWidth="100%"
             />
           </div>
         </>
